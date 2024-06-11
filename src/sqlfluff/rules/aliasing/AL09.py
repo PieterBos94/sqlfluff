@@ -99,7 +99,7 @@ class Rule_AL09(BaseRule):
                     assert whitespace and column_identifier and alias_identifier
 
                     # Column self-aliased
-                    if column_identifier.raw_upper == alias_identifier.raw_upper:
+                    if column_identifier == alias_identifier:
                         fixes: List[LintFix] = []
 
                         fixes.append(LintFix.delete(whitespace))
